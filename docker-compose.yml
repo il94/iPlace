@@ -6,8 +6,10 @@ services:
     image: postgres:16.1
     restart: always
     env_file: .env
-    expose:
-      - '5432'
+    ports:
+      - '5432:5432'
+    # expose:
+    #   - '5432'
     # networks:
     #   - network_rPlace
     volumes:
