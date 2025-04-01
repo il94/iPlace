@@ -17,7 +17,7 @@ function Recto() {
 	useEffect(() => {
 		async function verifyToken() {
 			try {
-				const userResponse: AxiosResponse<User> = await axios.get(`${import.meta.env.VITE_URL_BACK}/auth`, {
+				const userResponse: AxiosResponse<User> = await axios.get(`${"https://api.iplace.ilandols.com"}/auth`, {
 					headers: {
 						'Authorization': `Bearer ${Cookies.get("access_token")}`
 					}

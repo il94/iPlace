@@ -36,17 +36,17 @@ function DrawButton({ cellId, toolSelected, newColor, setCellFocused }: PropsDra
 	async function postNewColor(newColor: string) {
 		try {
 			if (toolSelected === ToolsSet.PEN) {
-				await axios.post(`${import.meta.env.VITE_URL_BACK}/cell/${cellId}`, {
+				await axios.post(`${"https://api.iplace.ilandols.com"}/cell/${cellId}`, {
 					newColor: newColor
 				}, new AxiosHeaders())
 			}
 			else if (toolSelected === ToolsSet.BOMB) {
-				await axios.post(`${import.meta.env.VITE_URL_BACK}/cell/${cellId}/zone`, {
+				await axios.post(`${"https://api.iplace.ilandols.com"}/cell/${cellId}/zone`, {
 					newColor: newColor
 				}, new AxiosHeaders())
 			}	
 			else if (toolSelected === ToolsSet.SCREEN) {
-				await axios.post(`${import.meta.env.VITE_URL_BACK}/cell/all`, {
+				await axios.post(`${"https://api.iplace.ilandols.com"}/cell/all`, {
 					newColor: newColor
 				}, new AxiosHeaders())
 			}

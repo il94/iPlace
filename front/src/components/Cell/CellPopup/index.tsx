@@ -20,7 +20,7 @@ function CellPopup({ display, cellId }: PropsCellPopup) {
 	useEffect(() => {
 		async function fetchHistory() {
 			try {
-				const historyResponse: AxiosResponse<HistoryCell[]> = await axios.get(`${import.meta.env.VITE_URL_BACK}/cell/${cellId}/history`, new AxiosHeaders())
+				const historyResponse: AxiosResponse<HistoryCell[]> = await axios.get(`${"https://api.iplace.ilandols.com"}/cell/${cellId}/history`, new AxiosHeaders())
 				
 				setHistory(historyResponse.data)
 			}

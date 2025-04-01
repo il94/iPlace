@@ -24,7 +24,7 @@ function GridHome() {
 	
 	async function logout() {
 		try {
-			// await axios.delete(`${import.meta.env.VITE_URL_BACK}/auth/logout`, {
+			// await axios.delete(`${"https://api.iplace.ilandols.com"}/auth/logout`, {
 			// 	headers: {
 			// 		'Authorization': `Bearer ${Cookies.get("access_token")}`
 			// 	}

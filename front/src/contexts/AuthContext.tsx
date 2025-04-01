@@ -3,7 +3,7 @@ import { io, Socket } from "socket.io-client";
 import { Role } from "../utils/enums";
 import { User } from "../utils/types";
 
-const socket: Socket = io(import.meta.env.VITE_URL_BACK, {
+const socket: Socket = io("https://api.iplace.ilandols.com", {
 	transports: ["websocket"]
 })
 

@@ -13,7 +13,7 @@ function Home() {
 	useEffect(() => {
 		async function fetchGrid() {
 			try {
-				const gridResponse: AxiosResponse = await axios.get(`${import.meta.env.VITE_URL_BACK}/grid`)
+				const gridResponse: AxiosResponse = await axios.get(`${"https://api.iplace.ilandols.com"}/grid`)
 
 				setGrid(gridResponse.data)
 			}

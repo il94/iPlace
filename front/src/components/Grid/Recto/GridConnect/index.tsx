@@ -35,7 +35,7 @@ function GridConnect() {
 			let authResponse: AxiosResponse
 
 			if (pageToDisplay === Page.SIGNIN) {
-				authResponse = await axios.post(`${import.meta.env.VITE_URL_BACK}/auth/signin`, {
+				authResponse = await axios.post(`${"https://api.iplace.ilandols.com"}/auth/signin`, {
 					username: username,
 					password: password,
 				})
@@ -45,7 +45,7 @@ function GridConnect() {
 					setError("Passwords are different")
 					return
 				}
-				authResponse = await axios.post(`${import.meta.env.VITE_URL_BACK}/auth/signup`, {
+				authResponse = await axios.post(`${"https://api.iplace.ilandols.com"}/auth/signup`, {
 					username: username,
 					password: password,
 				})
