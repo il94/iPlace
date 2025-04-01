@@ -13,6 +13,6 @@ async function bootstrap() {
 		origin: true,	
 	})
 
-	await app.listen(process.env.PORT || 3333)
+	await app.listen(process.env.PORT || 3334)
 }
 bootstrap()
