@@ -7,14 +7,13 @@ services:
     restart: always
     env_file: .env
     ports:
-      - '5433:5433'
+      - '5001:5432'
     expose:
-      - '5433'
+      - '5001'
     # networks:
     #   - network_rPlace
     volumes:
       - volume_rPlace:/var/lib/postgresql/data
-    command: -p 5433
 
   back:
     build:
