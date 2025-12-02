@@ -5,7 +5,12 @@ services:
     container_name: db_rPlace
     image: postgres:16.1
     restart: always
-    env_file: .env
+    environment:  
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      DATABASE_URL: ${DATABASE_URL}
     ports:
       - '5001:5432'
     expose:
@@ -20,6 +25,22 @@ services:
       context: ./back
       dockerfile: ./Dockerfile
     container_name: back_rPlace
+    environment:  
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+      ROOT_USERNAME: ${ROOT_USERNAME}
+      ROOT_PASSWORD: ${ROOT_PASSWORD}
+      IP_FRONT: ${IP_FRONT}
+      IP_BACK: ${IP_BACK}
+      PORT_FRONT: ${PORT_FRONT}
+      PORT: ${PORT}
+      URL_FRONT: ${URL_FRONT}
+      URL_BACK: ${URL_BACK}
     # ports:
     #   - '3000:3000'
     #   - '5555:5555'
@@ -35,9 +56,13 @@ services:
       context: ./front
       dockerfile: ./Dockerfile
     container_name: front_rPlace
-    # ports:
+    environment:
+      VITE_IP_BACK: ${VITE_IP_BACK}
+      VITE_PORT_BACK: ${VITE_PORT_BACK}
+      VITE_URL_BACK: ${VITE_URL_BACK}
+    ports:
     #   - '5173:5173'
-    #   - '4173:4173'
+      - '4001:4001'
     depends_on:
       - back
     # volumes:
