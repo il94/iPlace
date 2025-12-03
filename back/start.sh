@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# npx prisma generate
-npx prisma db push
-# npx prisma studio &
+npx prisma generate
+npx prisma migrate deploy
 npm run build
-npm run start:prod
+# npm run start:prod
+npm run start:dev
