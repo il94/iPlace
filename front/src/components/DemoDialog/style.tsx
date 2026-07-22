@@ -18,26 +18,36 @@ export const Overlay = styled.div`
 	background-color: rgba(0, 0, 0, 0.6);
 `
 
+// Reprend le cadre de la grille, pour que la fenetre se pose comme une tuile
 export const Style = styled.div`
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 
-	width: 450px;
-	max-width: 85%;
+	width: 560px;
+	aspect-ratio: 1;
 
-	padding: 30px;
-
-	border-radius: 15px;
+	border: solid 16px ${colors.borders.grid};
+	border-radius: 4px;
+	box-shadow: 0px 4px 15px black;
 
 	background-color: ${colors.window};
 
 	color: ${colors.text.alt};
 `
 
+export const Content = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: calc(100% - 60px);
+	height: calc(100% - 60px);
+`
+
 export const Title = styled.p`
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 
 	cursor: default;
 
@@ -46,7 +56,7 @@ export const Title = styled.p`
 `
 
 export const Message = styled.p`
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 
 	cursor: default;
 
