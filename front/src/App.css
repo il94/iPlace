@@ -29,7 +29,8 @@ button,
 form,
 label,
 input,
-span {
+span,
+ilandols-demo-badge /* le shadow DOM du badge herite de la police de son hote */ {
 	font-family: "Pixelify Sans", sans-serif;
 }
 button {
