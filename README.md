@@ -27,6 +27,17 @@ docker compose up --build
 
 After building, your app is running on the URL indicated in front .env file. (localhost:4173 by default)
 
+- Step 4 (optional) : To create the demo account, put :
+```bash
+docker compose exec back npm run seed:demo
+```
+
+## Demo
+
+<p align="center">
+	A shared demo account (<code>demo</code> / <code>demo</code>) is offered on the login card, so anyone can put pixels without signing up. It's a regular account, with a few coins to start with. Since it's shared, someone else may be drawing at the same time.
+</p>
+
 ## How it works
 
 <div align="center">
